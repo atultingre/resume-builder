@@ -1,0 +1,157 @@
+.container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 0;
+  }
+  
+  .heading {
+    font-weight: 500;
+    font-size: 2.1rem;
+  }
+  
+  .toolbar {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .colors {
+    display: flex;
+    gap: 20px;
+    padding: 0 30px;
+  }
+  
+  .colors .color {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background-color: #239ce2;
+  }
+  .colors .active {
+    border: 2px solid #000;
+  }
+  
+  .toolbar button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #239ce2;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .toolbar button svg {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  
+
+  /* Responsive Media Queries */
+
+/* For screens with a maximum width of 767px (e.g., mobile phones) */
+@media (max-width: 767px) {
+
+  .main {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100dvw;
+    height: auto;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+  .heading p{
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+  }
+  .toolbar {
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    width: 100dvw;
+    margin: auto;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .colors {
+    /* width: 100%; */
+    margin-bottom: 10px;
+  }
+
+  .color {
+    margin-right: 5px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* For screens with a minimum width of 768px and a maximum width of 1023px (e.g., tablets) */
+/* @media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .toolbar {
+    margin-bottom: 15px;
+  }
+
+  .color {
+    margin-right: 8px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+} */
+
+/* For screens with a minimum width of 1024px (e.g., desktops)
+@media (min-width: 1024px) {
+  .container {
+    padding: 40px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .color {
+    margin-right: 12px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 22px;
+  }
+} */
