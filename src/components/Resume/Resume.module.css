@@ -151,7 +151,9 @@
 
 a{
   text-decoration: none;
+  color: inherit;
 }
+
 @media (max-width: 767px) {
   .heading {
     margin: 0;
