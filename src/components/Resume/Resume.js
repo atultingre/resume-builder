@@ -47,8 +47,7 @@ const Resume = forwardRef((props, ref) => {
         onDragEnd={() => setSource(info.workExp?.id)}
         className={`${styles.section} ${
           info.workExp?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
+        }`}>
         <div className={styles.sectionTitle}>{info.workExp.sectionTitle}</div>
         <div className={styles.content}>
           {info.workExp?.details?.map((item) => (
@@ -73,7 +72,8 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.startDate && item.endDate ? (
                 <div className={styles.date}>
-                  <Calendar /> {getFormattedDate(item.startDate)}-
+                  {/* <Calendar />  */}
+                  {getFormattedDate(item.startDate)}-
                   {getFormattedDate(item.endDate)}
                 </div>
               ) : (
@@ -81,7 +81,8 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.location ? (
                 <p className={styles.date}>
-                  <MapPin /> Remote
+                  {/* <MapPin /> */}
+                  {item.location}
                 </p>
               ) : (
                 <span />
@@ -110,8 +111,7 @@ const Resume = forwardRef((props, ref) => {
         onDragEnd={() => setSource(info.project?.id)}
         className={`${styles.section} ${
           info.project?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
+        }`}>
         <div className={styles.sectionTitle}>{info.project.sectionTitle}</div>
         <div className={styles.content}>
           {info.project?.details?.map((item) => (
@@ -166,8 +166,7 @@ const Resume = forwardRef((props, ref) => {
         onDragEnd={() => setSource(info.education?.id)}
         className={`${styles.section} ${
           info.education?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
+        }`}>
         <div className={styles.sectionTitle}>
           {info.education?.sectionTitle}
         </div>
@@ -186,7 +185,8 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.startDate && item.endDate ? (
                 <div className={styles.date}>
-                  <Calendar /> {getFormattedDate(item.startDate)} -
+                  {/* <Calendar />  */}
+                  {getFormattedDate(item.startDate)} -
                   {getFormattedDate(item.endDate)}
                 </div>
               ) : (
@@ -205,8 +205,7 @@ const Resume = forwardRef((props, ref) => {
         onDragEnd={() => setSource(info.achievement?.id)}
         className={`${styles.section} ${
           info.achievement?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
+        }`}>
         <div className={styles.sectionTitle}>
           {info.achievement?.sectionTitle}
         </div>
@@ -233,8 +232,7 @@ const Resume = forwardRef((props, ref) => {
         onDragEnd={() => setSource(info.summary?.id)}
         className={`${styles.section} ${
           info.summary?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
+        }`}>
         <div className={styles.sectionTitle}>{info.summary?.sectionTitle}</div>
         <div className={styles.content}>
           <p className={styles.overview}>{info.summary?.detail}</p>
@@ -249,8 +247,7 @@ const Resume = forwardRef((props, ref) => {
         onDragEnd={() => setSource(info.other?.id)}
         className={`${styles.section} ${
           info.other?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
+        }`}>
         <div className={styles.sectionTitle}>{info.other?.sectionTitle}</div>
         <div className={styles.content}>
           <p className={styles.overview}>{info?.other?.detail}</p>
@@ -313,28 +310,36 @@ const Resume = forwardRef((props, ref) => {
 
           <div className={styles.links}>
             {info.basicInfo?.detail?.email ? (
-              <a href={info.basicInfo?.detail?.email} target="_blank" rel="noreferrer" className={styles.link} type="email">
+              <p className={styles.link} type="email">
                 <AtSign /> {info.basicInfo?.detail?.email}
-              </a>
+              </p>
             ) : (
               <span />
             )}
             {info.basicInfo?.detail?.phone ? (
-              <a href={`${info.basicInfo?.detail?.phone}`} rel="noreferrer"  className={styles.link}>
+              <p className={styles.link}>
                 <Phone /> +91-{info.basicInfo?.detail?.phone}
-              </a>
+              </p>
             ) : (
               <span />
             )}
             {info.basicInfo?.detail?.linkedin ? (
-              <a href={info.basicInfo?.detail?.linkedin} target="_blank" rel="noreferrer"  className={styles.link}>
+              <a
+                href={info.basicInfo?.detail?.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.link}>
                 <Linkedin /> {info.basicInfo?.detail?.linkedin}
               </a>
             ) : (
               <span />
             )}
             {info.basicInfo?.detail?.github ? (
-              <a href={info.basicInfo?.detail?.github} target="_blank" rel="noreferrer" className={styles.link}>
+              <a
+                href={info.basicInfo?.detail?.github}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.link}>
                 <GitHub /> {info.basicInfo?.detail?.github}
               </a>
             ) : (
