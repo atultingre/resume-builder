@@ -1,7 +1,4 @@
 import React, { useRef, useState } from "react";
-import ReactToPrint from "react-to-print";
-import { ArrowDown } from "react-feather";
-
 import Editor from "../Editor/Editor";
 import Resume from "../Resume/Resume";
 
