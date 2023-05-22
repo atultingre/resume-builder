@@ -33,3 +33,70 @@
 .right img {
   width: 400px;
 }
+
+/* For screens with a maximum width of 767px (e.g., mobile phones) */
+@media (max-width: 767px) {
+  .container {
+    width: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heading {
+    margin: auto;
+    max-width: 500px;
+    color: #000;
+    font-size: 2rem;
+    line-height: 4.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .right img {
+    margin: auto;
+    width: 80%;
+  }
+
+}
+
+/* For screens with a minimum width of 768px and a maximum width of 1023px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .left,
+  .right {
+    width: 50%;
+    text-align: center;
+  }
+
+  .right {
+    margin-top: 0;
+  }
+
+}
+
+/* For screens with a minimum width of 1024px (e.g., desktops) */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .left,
+  .right {
+
+    width: 50%;
+  }
+
+  .right {
+    text-align: right;
+    margin-top: 0;
+  }
+}
