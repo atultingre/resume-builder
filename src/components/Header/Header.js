@@ -1,15 +1,13 @@
 import React from "react";
 import styles from "./Header.module.css";
-import resumeSvg from "../../assets/resume.svg";
+import resumeSvg from "../../assets/resume1.svg";
 const Header = () => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
         <p className={styles.heading}>
-          A <span>Resume</span> that stands out!
-        </p>
-        <p className={styles.heading}>
-          Make your own resume. <span>It's free</span>
+          Unlock Your <span> Career </span> Potential with our{" "}
+          <span>Resume Builder!</span>
         </p>
       </div>
       <div className={styles.right}>

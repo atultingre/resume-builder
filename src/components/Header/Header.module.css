@@ -6,12 +6,16 @@
   align-items: center;
   justify-content: space-evenly;
   gap: 30px;
-  background-color: rgb(238, 252, 255);
-  min-height: 85vh;
+  background-image: url("../../assets/background.svg");
+  /* background-color: rgb(238, 252, 255); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .heading {
   margin: 0 auto;
+  font-family: 'Lora', serif;
   max-width: 500px;
   color: #000;
   font-size: 3.1rem;
@@ -22,19 +26,15 @@
 
 .heading span {
   background-clip: text;
+  
   background-image: linear-gradient(to right, #239ce2, #1369b9);
   color: transparent;
 }
-
-/* .right ,.left {
-  display: flex;
-} */
 
 .right img {
   width: 400px;
 }
 
-/* For screens with a maximum width of 767px (e.g., mobile phones) */
 @media (max-width: 767px) {
   .container {
     width: 100dvh;
@@ -43,31 +43,22 @@
   }
 
   .heading {
-    margin: auto;
-    max-width: 500px;
+    margin: 0 auto;
+  font-family: 'Lora', serif;
+    max-width: 750px;
     color: #000;
-    font-size: 2rem;
-    line-height: 4.1rem;
+    font-size: 3.2rem;
+    line-height: 4rem;
     font-weight: bold;
     letter-spacing: 1px;
-  }
-
-  .left,
-  .right {
-    width: 100%;
-    text-align: center;
-  }
-
-  .right img {
-    margin: auto;
-    width: 80%;
   }
 
 }
 
 /* For screens with a minimum width of 768px and a maximum width of 1023px (e.g., tablets) */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* @media (min-width: 768px) and (max-width: 1023px) {
   .container {
+
     flex-direction: row;
   }
 
@@ -81,11 +72,12 @@
     margin-top: 0;
   }
 
-}
+} */
 
 /* For screens with a minimum width of 1024px (e.g., desktops) */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .container {
+    width: 100dvh;
     flex-direction: row;
   }
 
@@ -99,4 +91,4 @@
     text-align: right;
     margin-top: 0;
   }
-}
+} */

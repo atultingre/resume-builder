@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600&family=Poppins:wght@100;200;300;400;500;600;700&family=Varela&family=Varela+Round&display=swap') * {
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600&family=Poppins:wght@100;200;300;400;500;600;700&family=Varela&family=Varela+Round&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,3 +10,5 @@
   /* font-family: 'Varela', sans-serif; */
   /* font-family: 'Varela Round', sans-serif; */
 }
+
+@media (max-width: 767px) {}

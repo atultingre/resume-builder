@@ -1,0 +1,12 @@
+.resume-builder {
+    width: 70dvh;
+    margin: auto;
+}
+
+h1 {
+    width: 100%;
+    font-size: 4rem;
+    font-family: 'Lora', serif;
+    text-align: center;
+    margin-bottom: 40px;
+}

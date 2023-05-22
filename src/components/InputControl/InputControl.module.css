@@ -25,10 +25,16 @@ input:focus {
     border: 1px solid #239ce2;
 }
 
+
 /* For screens with a maximum width of 767px (e.g., mobile phones) */
 @media (max-width: 767px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
 
     input {
-        font-size: 22px;
+        width: 100%;
+        font-size: 18px;
     }
 }
