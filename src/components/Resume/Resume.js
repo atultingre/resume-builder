@@ -1,10 +1,10 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import {
   AtSign,
-  Calendar,
+  // Calendar,
   GitHub,
   Linkedin,
-  MapPin,
+  // MapPin,
   Paperclip,
   Phone,
 } from "react-feather";
