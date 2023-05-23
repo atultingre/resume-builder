@@ -126,3 +126,13 @@
     padding: 12px 22px;
   }
 } */
+
+
+@media only screen and (max-width: 600px) {
+  /* Adjustments for small screens */
+  label, input, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

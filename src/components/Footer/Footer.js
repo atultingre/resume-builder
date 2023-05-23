@@ -4,19 +4,19 @@ import { Briefcase, GitHub, Instagram, Linkedin } from "react-feather";
 const Footer = () => {
   return (
     <div className="footer">
-      <footer class="footer-distributed">
-        <div class="footer-left">
+      <footer className="footer-distributed">
+        <div className="footer-left">
           <h3>
             Atul<span>Tingre</span>
           </h3>
-          <p class="footer-company-name">
+          <p className="footer-company-name">
             Copyright © 2023 <strong>Atul Tingre</strong> All rights reserved
           </p>
         </div>
 
-        <div class="footer-center">
+        <div className="footer-center">
           <div>
-            <i class="fa fa-map-marker"></i>
+            <i className="fa fa-map-marker"></i>
             <p>
               <span>Nanded</span>
               Maharashtra
@@ -24,18 +24,18 @@ const Footer = () => {
           </div>
 
           <div>
-            <i class="fa fa-phone"></i>
+            <i className="fa fa-phone"></i>
             <p>+91 8806234568</p>
           </div>
           <div>
-            <i class="fa fa-envelope"></i>
+            <i className="fa fa-envelope"></i>
             <p>
               <a href="atultingre.work@gmail.com">atultingre.work@gmail.com</a>
             </p>
           </div>
         </div>
-        <div class="footer-right">
-          <div class="footer-icons">
+        <div className="footer-right">
+          <div className="footer-icons">
             <a href="https://www.linkedin.com/in/atultingre/" target="_blank" rel="noreferrer">
               <Linkedin />
             </a>

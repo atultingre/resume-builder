@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import InputControl from "../InputControl/InputControl";
+import EditorContext from '../../context/EditorContext'
+import styles from "../Editor/Editor.module.css";
 
-const WorkExpBody = ({styles,values, setValues,handlePointUpdate}) => {
+const WorkExpBody = () => {
+  const {values, setValues,handlePointUpdate} = useContext(EditorContext)
   return (
-    <div>
+    <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
           label="Title"

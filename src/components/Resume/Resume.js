@@ -1,19 +1,29 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   AtSign,
-  // Calendar,
+  Calendar,
   GitHub,
   Linkedin,
-  // MapPin,
+  MapPin,
   Paperclip,
   Phone,
 } from "react-feather";
 
 import styles from "./Resume.module.css";
+import DataContext from "../../context/DataContext";
 
-const Resume = forwardRef((props, ref) => {
-  const information = props.information;
-  const sections = props.sections;
+const Resume = forwardRef(() => {
+  const { sections, resumeInformation, activeColor, resumeRef } =
+    useContext(DataContext);
+
+  const information = resumeInformation;
+  const section = sections;
   const containerRef = useRef();
 
   const [columns, setColumns] = useState([[], []]);
@@ -21,25 +31,39 @@ const Resume = forwardRef((props, ref) => {
   const [target, seTarget] = useState("");
 
   const info = {
-    workExp: information[sections.workExp],
-    project: information[sections.project],
-    achievement: information[sections.achievement],
-    education: information[sections.education],
-    basicInfo: information[sections.basicInfo],
-    summary: information[sections.summary],
-    other: information[sections.other],
+    workExp: information[section.workExp],
+    summary: information[section.summary],
+    project: information[section.project],
+    achievement: information[section.achievement],
+    education: information[section.education],
+    basicInfo: information[section.basicInfo],
+    other: information[section.other],
   };
 
   const getFormattedDate = (value) => {
     if (!value) return "";
     const date = new Date(value);
-
-    return `${date.getMonth() + 1}/${date.getFullYear()}`;
-    // ${date.getDate()}/
+    const monthName = date.toLocaleString("default", { month: "short" });
+    return `${monthName} ${date.getFullYear()}`;
   };
 
   const sectionDiv = {
-    [sections.workExp]: (
+    [section.summary]: (
+      <div
+        key={"summary"}
+        draggable
+        onDragOver={() => seTarget(info.summary?.id)}
+        onDragEnd={() => setSource(info.summary?.id)}
+        className={`${styles.section} ${
+          info.summary?.sectionTitle ? "" : styles.hidden
+        }`}>
+        <div className={styles.sectionTitle}>{info.summary?.sectionTitle}</div>
+        <div className={styles.content}>
+          <p className={styles.overview}>{info.summary?.detail}</p>
+        </div>
+      </div>
+    ),
+    [section.workExp]: (
       <div
         key={"workexp"}
         draggable
@@ -63,7 +87,7 @@ const Resume = forwardRef((props, ref) => {
                 <span />
               )}
               {item.certificationLink ? (
-                <a className={styles.link} href={item.certificationLink}>
+                <a href={item.certificationLink} className={styles.link}>
                   <Paperclip />
                   {item.certificationLink}
                 </a>
@@ -72,16 +96,20 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.startDate && item.endDate ? (
                 <div className={styles.date}>
-                  {/* <Calendar />  */}
-                  {getFormattedDate(item.startDate)}-
+                  <p className={styles.link} href={item.certificationLink}>
+                    <Calendar />
+                  </p>
+                  {getFormattedDate(item.startDate)} -
                   {getFormattedDate(item.endDate)}
                 </div>
               ) : (
-                <div />
+                <span />
               )}
               {item.location ? (
                 <p className={styles.date}>
-                  {/* <MapPin /> */}
+                  <p className={styles.link} href={item.certificationLink}>
+                    <MapPin />
+                  </p>
                   {item.location}
                 </p>
               ) : (
@@ -103,7 +131,7 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-    [sections.project]: (
+    [section.project]: (
       <div
         key={"project"}
         draggable
@@ -158,7 +186,7 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-    [sections.education]: (
+    [section.education]: (
       <div
         key={"education"}
         draggable
@@ -185,7 +213,9 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.startDate && item.endDate ? (
                 <div className={styles.date}>
-                  {/* <Calendar />  */}
+                  <p className={styles.link} href={item.certificationLink}>
+                    <Calendar />
+                  </p>
                   {getFormattedDate(item.startDate)} -
                   {getFormattedDate(item.endDate)}
                 </div>
@@ -197,7 +227,7 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-    [sections.achievement]: (
+    [section.achievement]: (
       <div
         key={"achievement"}
         draggable
@@ -224,22 +254,8 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-    [sections.summary]: (
-      <div
-        key={"summary"}
-        draggable
-        onDragOver={() => seTarget(info.summary?.id)}
-        onDragEnd={() => setSource(info.summary?.id)}
-        className={`${styles.section} ${
-          info.summary?.sectionTitle ? "" : styles.hidden
-        }`}>
-        <div className={styles.sectionTitle}>{info.summary?.sectionTitle}</div>
-        <div className={styles.content}>
-          <p className={styles.overview}>{info.summary?.detail}</p>
-        </div>
-      </div>
-    ),
-    [sections.other]: (
+
+    [section.other]: (
       <div
         key={"other"}
         draggable
@@ -285,24 +301,27 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     setColumns([
-      [sections.project, sections.education, sections.summary],
-      [sections.workExp, sections.achievement, sections.other],
+      [section.project, section.education, section.summary],
+      [section.workExp, section.achievement, section.other],
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     swapSourceTarget(source, target);
-  }, [source]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [source]);
+
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!props.activeColor || !container) return;
+    if (!activeColor || !container) return;
 
-    container.style.setProperty("--color", props.activeColor);
-  }, [props.activeColor]);
+    container.style.setProperty("--color", activeColor);
+  }, [activeColor]);
 
   return (
-    <div ref={ref}>
+    <div ref={resumeRef}>
       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
           <p className={styles.heading}>{info.basicInfo?.detail?.name}</p>

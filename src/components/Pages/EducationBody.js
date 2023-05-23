@@ -1,10 +1,13 @@
-import React from 'react'
-import InputControl from '../InputControl/InputControl'
+import React, { useContext } from "react";
+import InputControl from "../InputControl/InputControl";
+import EditorContext from "../../context/EditorContext";
+import styles from "../Editor/Editor.module.css";
 
-const EducationBody = ({styles,values, setValues,handlePointUpdate}) => {
+const EducationBody = () => {
+  const { values, setValues } = useContext(EditorContext);
   return (
-    <div>
-        <div className={styles.row}>
+    <div className={styles.detail}>
+      <div className={styles.row}>
         <InputControl
           label="Title"
           value={values.title}
@@ -44,6 +47,6 @@ const EducationBody = ({styles,values, setValues,handlePointUpdate}) => {
       </div>
     </div>
   )
-}
+};
 
-export default EducationBody
+export default EducationBody;
