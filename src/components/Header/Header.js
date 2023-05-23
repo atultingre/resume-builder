@@ -11,7 +11,7 @@ const Header = () => {
         </p>
       </div>
       <div className={styles.right}>
-        <img src={resumeSvg} alt="Resume" />
+        <img src={resumeSvg} alt="Resume" width="640" height="360" />
       </div>
     </div>
   );

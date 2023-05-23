@@ -26,14 +26,16 @@
 
 .heading span {
   background-clip: text;
-  
+
   background-image: linear-gradient(to right, #239ce2, #1369b9);
   color: transparent;
 }
 
 .right img {
-  width: 400px;
-}
+    /* width: 80%;  */
+    max-width: 100%;
+    height: auto;
+  }
 
 @media (max-width: 767px) {
   .container {
@@ -44,7 +46,7 @@
 
   .heading {
     margin: 0 auto;
-  font-family: 'Lora', serif;
+    font-family: 'Lora', serif;
     max-width: 750px;
     color: #000;
     font-size: 3.2rem;
