@@ -1,17 +1,17 @@
 .container {
   padding: 50px 30px;
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   gap: 30px;
   background-image: url("../../assets/background.svg");
-  /* background-color: rgb(238, 252, 255); */
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
+/* background-color: rgb(238, 252, 255); */
 
 .heading {
   margin: 0 auto;

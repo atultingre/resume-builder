@@ -11,3 +11,9 @@
   /* font-family: 'Varela Round', sans-serif; */
 }
 
+.container{
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+}
+

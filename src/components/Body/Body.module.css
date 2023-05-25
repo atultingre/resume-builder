@@ -134,7 +134,7 @@
   /* Adjustments for small screens */
   label, input, button {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     margin-bottom: 10px;
   }
 }
