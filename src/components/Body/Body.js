@@ -6,6 +6,7 @@ import styles from "./Body.module.css";
 import ResumeBuilder from "../ResumeBuilder/ResumeBuilder";
 // import DataContext from "../../context/DataContext";
 import { EditorProvider } from "../../context/EditorContext";
+import Loader from "../Loader/Loader";
 
 function Body() {
   // const { sections, resumeInformation, setResumeInformation } =
@@ -13,6 +14,7 @@ function Body() {
 
   return (
     <div className={styles.container}>
+    <Loader/>
       <ResumeBuilder />
       <div className={styles.main}>
         <EditorProvider>
