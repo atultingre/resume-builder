@@ -14,7 +14,7 @@ function Body() {
 
   return (
     <div className={styles.container}>
-    <Loader/>
+      <Loader />
       <ResumeBuilder />
       <div className={styles.main}>
         <EditorProvider>
