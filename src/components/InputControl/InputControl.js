@@ -5,8 +5,10 @@ const InputControl = ({ label, ...props }) => {
   return (
     <div className="form">
       <div className={styles.container}>
-        {label && <label>{label}</label>}
-        <input type="text" {...props} />
+        {/* <div className="item"> */}
+          {label && <label>{label}</label>}
+          <input type="text" {...props} />
+        {/* </div> */}
       </div>
     </div>
   );

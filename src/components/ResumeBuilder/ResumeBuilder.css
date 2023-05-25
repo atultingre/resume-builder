@@ -1,5 +1,4 @@
 .resume-builder {
-    width: 70dvh;
     margin: auto;
 }
 
@@ -9,4 +8,13 @@ h1 {
     font-family: 'Lora', serif;
     text-align: center;
     margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+    .resume-builder, .heading1{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -46,3 +46,12 @@
         transform: rotate(360deg)
     }
 }
+
+@media (max-width: 767px) {
+    .loader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100%;
+    }
+}

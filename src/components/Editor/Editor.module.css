@@ -1,7 +1,4 @@
 .container {
-  /* min-width: 550px;
-  min-height: 450px;
-  max-width: 750px; */
   width: 90dvw;
   display: flex;
   flex-direction: column;
